@@ -1,0 +1,36 @@
+systemLog:
+   destination: file
+   path: "/opt/mongodb/logs/mongodb.log"
+   logAppend: true
+   timeStampFormat: "iso8601-local"
+processManagement:
+   fork: true
+   pidFilePath: "/opt/mongodb/logs/mongod.pid"
+net:
+   bindIp: "0.0.0.0"
+   port: 27017
+   maxIncomingConnections: 500
+   wireObjectCheck: true
+storage:
+   dbPath: "/opt/mongodb/data/"
+   indexBuildRetry: true
+   journal:
+      enabled: true
+      commitIntervalMs: 100
+   directoryPerDB: true
+   syncPeriodSecs: 60
+   engine: "wiredTiger"
+   wiredTiger:
+      engineConfig:
+         journalCompressor: "snappy"
+      collectionConfig:
+         blockCompressor: "snappy"
+      indexConfig:
+         prefixCompression: true
+security:
+   authorization: "enabled"
+operationProfiling:
+   mode: "slowOp"
+   slowOpThresholdMs: 200
+   slowOpSampleRate: 1.0
+   
