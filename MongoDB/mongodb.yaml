@@ -30,7 +30,7 @@ storage:
 security:
    authorization: "enabled"
 operationProfiling:
-   mode: "slowOp"
+   mode: "all"
    slowOpThresholdMs: 200
    slowOpSampleRate: 1.0
    
