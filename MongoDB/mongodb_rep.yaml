@@ -28,12 +28,12 @@ storage:
       indexConfig:
          prefixCompression: true
 security:
-   authorization: "enabled"
+   authorization: "disabled"
 operationProfiling:
    mode: "all"
    slowOpThresholdMs: 200
    slowOpSampleRate: 1.0
 replication:
    oplogSizeMB: 2048
-   replSetName: fymongodb
+   replSetName: "fymongodb"
    enableMajorityReadConcern: true    
