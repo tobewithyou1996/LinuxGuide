@@ -28,7 +28,9 @@ storage:
       indexConfig:
          prefixCompression: true
 security:
-   authorization: "disabled"
+   authorization: "disabled"  # 配置好后需要开启验证
+   # keyFile: <string>
+   # clusterAuthMode: "keyFile"
 operationProfiling:
    mode: "all"
    slowOpThresholdMs: 200
