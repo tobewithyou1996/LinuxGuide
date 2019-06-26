@@ -172,13 +172,10 @@ def activemq_mointer(userinfo_encode):
             pending_queue_lists += info_dict['value']['Name']
             pending_queue_lists += ' and '
             logging.info(
-                "消息队列--{}--有阻塞消息--{} 条".format(
+                "Queues--{}--peding msg --{}".format(
                     info_dict['value']['Name'],
                     info_dict['value']['QueueSize']))
     return {'pending_queue_sum': pending_queue_sum, 'pending_queue_lists': pending_queue_lists, 'mq_sum': mq_sum}
-
-
-
 
 if __name__ == '__main__':
     # ActiveMQ 服务器信息
@@ -193,8 +190,8 @@ if __name__ == '__main__':
         filename="activemq_mointer.log",
         filemode="a",
         format="%(asctime)s %(name)s:%(levelname)s:%(message)s",
-        datefmt="%d-%M-%Y %H:%M:%S",
-        level=logging.DEBUG)
+        datefmt="%Y-%m-%d %H:%M:%S",
+        level=logging.DEBUG,)
     if len(sys.argv) == 2:
         mointer_argv = sys.argv[1]
         if mointer_argv in ('pending', 'pending_lists', 'queue_sum'):
