@@ -84,7 +84,7 @@ if __name__ == '__main__':
     userinfo_encode = base64.b64encode(userinfo.encode('utf8'))
     # 日志配置,注意下面日志文件的路径是采用相对路径的。
     logging.basicConfig(
-        filename="activemq_mointer.log",
+        filename="/var/log/activemq_mointer.log",
         filemode="a",
         format="%(asctime)s %(name)s:%(levelname)s:%(message)s",
         datefmt="%d-%M-%Y %H:%M:%S",
@@ -112,7 +112,7 @@ if __name__ == '__main__':
 
 1. 传入参数只能一个 ，而且只能是 `pending`, `pending_lists`, `queue_sum` ，分别代表阻塞消息数、阻塞消息队列名称、总的消息数。
 
-2. 脚本有日志记录和异常记录，注意设置 日志文件路径，假设脚本路径位于 `/opt/scripts/`,我们在该目录下进行执行脚本的话，`activemq_mointer.log` 日志文件也就会产生在当前目录下。我们可以在路径中通过相对路径来指定文件夹 形如 `../..//var/log/activemq_mointer.log`
+2. 脚本有日志记录和异常记录，注意设置 日志文件路径，假设脚本路径位于 `/opt/scripts/`,我们在该目录下进行执行脚本的话，`activemq_mointer.log` 日志文件也就会产生在当前目录下。我们可以在路径中通过绝对路径来指定文件夹 形如 `/var/log/activemq_mointer.log`
 
 3. 该脚本是由 `zabbix agent` 进行使用 ，所以我们需要设置该 脚本的权限，以及保证该脚本的用户有创建日志文件的权限(或者我们先前创建好对应权限日志文件)
 
@@ -187,7 +187,7 @@ if __name__ == '__main__':
     userinfo_encode = base64.b64encode(userinfo.encode('utf8'))
     # 日志配置
     logging.basicConfig(
-        filename="activemq_mointer.log",
+        filename="/var/log/activemq_mointer.log",
         filemode="a",
         format="%(asctime)s %(name)s:%(levelname)s:%(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
