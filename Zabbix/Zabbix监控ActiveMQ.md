@@ -191,7 +191,7 @@ if __name__ == '__main__':
         filemode="a",
         format="%(asctime)s %(name)s:%(levelname)s:%(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
-        level=logging.DEBUG,)
+        level=logging.INFO)
     if len(sys.argv) == 2:
         mointer_argv = sys.argv[1]
         if mointer_argv in ('pending', 'pending_lists', 'queue_sum'):
