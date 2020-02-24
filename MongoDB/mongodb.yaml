@@ -11,6 +11,10 @@ net:
    port: 27017
    maxIncomingConnections: 500
    wireObjectCheck: true
+   unixDomainSocket:
+       enabled: true
+       pathPrefix: /opt/mongodb/
+       filePermissions: 0700
 storage:
    dbPath: "/opt/mongodb/data/"
    indexBuildRetry: true
